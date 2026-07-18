@@ -67,7 +67,7 @@ check_model_exists() {
 
   curl "${api_host}${api_endpoint_models}" \
     --no-progress-meter |
-    jq -r '.models[].model' |
+    jq -r '.data[].id' |
     grep -q '\b'"${model}"'\b'
 }
 
